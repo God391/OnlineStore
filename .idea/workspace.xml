@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="59e09ab5-11e4-4c8d-85b7-a92c414ea7de" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="store@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="store: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="store: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="category: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="store: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="orderitem: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="store: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="orders: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="store: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="product: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="store: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="OnlineStore" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2HXM9FzPnRfduLUIiqII4cQCKxj" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/mapper" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\numbe\OneDrive\University\JAVA\OnlineStore\src\main\java\mapper" />
+      <recent name="C:\Users\FANG\Desktop\University\JAVA\OnlineStore\src\main\java\mapper" />
+      <recent name="C:\Users\FANG\Desktop\University\JAVA\OnlineStore\src\main\resources" />
+      <recent name="C:\Users\FANG\Desktop\University\JAVA\OnlineStore\src\main\webapp\jsp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mapper" />
+      <recent name="web.servlet" />
+      <recent name="com.xmut.mapper" />
+      <recent name="utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\FANG\Desktop\University\JAVA\OnlineStore\src\main\webapp\js" />
+      <recent name="C:\Users\FANG\Desktop\University\JAVA\OnlineStore\src\main\resources" />
+      <recent name="C:\Users\FANG\Desktop\University\JAVA\OnlineStore\src\main\java\mapper" />
+      <recent name="C:\Users\FANG\Desktop\University\JAVA\OnlineStore\src\main\java" />
+      <recent name="C:\Users\FANG\Desktop\University\JAVA\OnlineStore\src\main" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.MybatisTest.testFactory">
+    <configuration name="FactoryTest.testFactory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OnlineStore" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FactoryTest" />
+      <option name="METHOD_NAME" value="testFactory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OnlineStore" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyBatisTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisTest.testAdd" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OnlineStore" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyBatisTest" />
+      <option name="METHOD_NAME" value="testAdd" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OnlineStore" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MybatisTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MybatisTest.testFactory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OnlineStore" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MybatisTest" />
+      <option name="METHOD_NAME" value="testFactory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MybatisTest.testFactory" />
+        <item itemvalue="JUnit.MybatisTest" />
+        <item itemvalue="JUnit.FactoryTest.testFactory" />
+        <item itemvalue="JUnit.MyBatisTest.testAdd" />
+        <item itemvalue="JUnit.MyBatisTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="59e09ab5-11e4-4c8d-85b7-a92c414ea7de" name="Default Changelist" comment="" />
+      <created>1668426821965</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668426821965</updated>
+      <workItem from="1668426824303" duration="135000" />
+      <workItem from="1668427013238" duration="187000" />
+      <workItem from="1668427256216" duration="2274000" />
+      <workItem from="1668429557626" duration="1916000" />
+      <workItem from="1668503999063" duration="7893000" />
+      <workItem from="1668574479903" duration="4817000" />
+      <workItem from="1668584292824" duration="2085000" />
+      <workItem from="1668586427178" duration="907000" />
+      <workItem from="1668587355342" duration="17000" />
+      <workItem from="1668587384944" duration="498000" />
+      <workItem from="1668587900944" duration="922000" />
+      <workItem from="1668588872235" duration="2719000" />
+      <workItem from="1668591766159" duration="991000" />
+      <workItem from="1668608913056" duration="2298000" />
+      <workItem from="1668680569992" duration="14078000" />
+      <workItem from="1668732219874" duration="3454000" />
+      <workItem from="1668741043959" duration="1989000" />
+      <workItem from="1668858228627" duration="34000" />
+      <workItem from="1668864702129" duration="188000" />
+      <workItem from="1668864903123" duration="1789000" />
+      <workItem from="1668933192701" duration="715000" />
+      <workItem from="1668994807511" duration="2001000" />
+      <workItem from="1669038467816" duration="2183000" />
+      <workItem from="1669109624165" duration="643000" />
+      <workItem from="1669110430268" duration="8111000" />
+      <workItem from="1669180581463" duration="13161000" />
+      <workItem from="1669202656279" duration="7204000" />
+      <workItem from="1669276541606" duration="2652000" />
+      <workItem from="1669279845282" duration="7065000" />
+      <workItem from="1669301301084" duration="1130000" />
+      <workItem from="1669377184830" duration="5669000" />
+      <workItem from="1669432769523" duration="11347000" />
+      <workItem from="1669472006263" duration="1109000" />
+      <workItem from="1669533474691" duration="13853000" />
+      <workItem from="1669626457363" duration="9440000" />
+      <workItem from="1669711090651" duration="8313000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="446" y="168" key="#Project_Structure" timestamp="1668858239906">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state x="446" y="168" key="#Project_Structure/0.0.1707.1019@0.0.1707.1019" timestamp="1668858239906" />
+    <state x="309" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1668933904615">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state x="309" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1668933904615" />
+    <state x="659" y="213" key="#com.intellij.ide.util.MemberChooser" timestamp="1669633479077">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state x="659" y="213" key="#com.intellij.ide.util.MemberChooser/0.0.1707.1019@0.0.1707.1019" timestamp="1669633479077" />
+    <state x="647" y="425" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1668689446674">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state x="647" y="425" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1668689446674" />
+    <state x="619" y="377" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1668689449631">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state x="619" y="377" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1707.1019@0.0.1707.1019" timestamp="1668689449631" />
+    <state width="1662" height="79" key="GridCell.Tab.0.bottom" timestamp="1669723186992">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state width="1662" height="79" key="GridCell.Tab.0.bottom/0.0.1707.1019@0.0.1707.1019" timestamp="1669723186992" />
+    <state width="1662" height="79" key="GridCell.Tab.0.center" timestamp="1669723186992">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state width="1662" height="79" key="GridCell.Tab.0.center/0.0.1707.1019@0.0.1707.1019" timestamp="1669723186992" />
+    <state width="1662" height="79" key="GridCell.Tab.0.left" timestamp="1669723186992">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state width="1662" height="79" key="GridCell.Tab.0.left/0.0.1707.1019@0.0.1707.1019" timestamp="1669723186992" />
+    <state width="1662" height="79" key="GridCell.Tab.0.right" timestamp="1669723186992">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state width="1662" height="79" key="GridCell.Tab.0.right/0.0.1707.1019@0.0.1707.1019" timestamp="1669723186992" />
+    <state width="1662" height="209" key="GridCell.Tab.1.bottom" timestamp="1669639111874">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state width="1662" height="209" key="GridCell.Tab.1.bottom/0.0.1707.1019@0.0.1707.1019" timestamp="1669639111874" />
+    <state width="1662" height="209" key="GridCell.Tab.1.center" timestamp="1669639111874">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state width="1662" height="209" key="GridCell.Tab.1.center/0.0.1707.1019@0.0.1707.1019" timestamp="1669639111874" />
+    <state width="1662" height="209" key="GridCell.Tab.1.left" timestamp="1669639111874">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state width="1662" height="209" key="GridCell.Tab.1.left/0.0.1707.1019@0.0.1707.1019" timestamp="1669639111874" />
+    <state width="1662" height="209" key="GridCell.Tab.1.right" timestamp="1669639111874">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state width="1662" height="209" key="GridCell.Tab.1.right/0.0.1707.1019@0.0.1707.1019" timestamp="1669639111874" />
+    <state x="384" y="165" key="Maven.ArtifactSearchDialog" timestamp="1668680625426">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state x="384" y="165" key="Maven.ArtifactSearchDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1668680625426" />
+    <state x="263" y="215" width="996" height="710" key="SettingsEditor" timestamp="1669552450473">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state x="263" y="215" width="996" height="710" key="SettingsEditor/0.0.1707.1019@0.0.1707.1019" timestamp="1669552450473" />
+    <state x="643" y="287" key="chooseDestDirectoryDialog" timestamp="1668687584495">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state x="643" y="287" key="chooseDestDirectoryDialog/0.0.1707.1019@0.0.1707.1019" timestamp="1668687584495" />
+    <state x="510" y="236" key="run.anything.popup" timestamp="1668587982119">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state x="510" y="236" key="run.anything.popup/0.0.1707.1019@0.0.1707.1019" timestamp="1668587982119" />
+    <state x="516" y="220" width="672" height="678" key="search.everywhere.popup" timestamp="1669541995096">
+      <screen x="0" y="0" width="1707" height="1019" />
+    </state>
+    <state x="516" y="220" width="672" height="678" key="search.everywhere.popup/0.0.1707.1019@0.0.1707.1019" timestamp="1669541995096" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="orderItems" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

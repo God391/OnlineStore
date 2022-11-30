@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ProductMapper">
+
+    <select id="selectAll" resultType="pojo.Product">
+        select *
+        from product
+    </select>
+
+    <select id="selectByProductNameLikes" resultType="pojo.Product">
+        select *
+        from product
+        where pname like "%"#{p}"%"
+    </select>
+
+    <select id="selectHot" resultType="pojo.Product">
+        select *
+        from product
+        where is_hot = #{is_hot} and pflag = #{pflag}
+        order by pdate desc
+        limit 9
+    </select>
+
+    <select id="selectNew" resultType="pojo.Product">
+        select *
+        from product
+        where pflag = #{pflag}
+        order by pdate desc
+        limit 9
+    </select>
+    <select id="selectById" resultType="pojo.Product">
+        select *
+        from product
+        where pid = #{pid}
+    </select>
+
+    <select id="selectByPage" parameterType="pageBean" resultType="pojo.Product">
+        select *
+        from product
+        where cid = #{cid} and pflag = #{pflag}
+        order by is_hot desc, pdate desc
+        limit ${start}, ${pageSize}
+    </select>
+
+    <select id="selectTotalRecord" resultType="java.lang.Integer">
+        select count(*)
+        from product
+        where cid = #{cid} and pflag = #{pflag}
+    </select>
+
+    <select id="searchSelectByPage" resultType="pojo.Product">
+        select *
+        from product
+        where pflag = #{pflag} and pname like "%"#{p}"%"
+        order by is_hot desc, pdate desc
+        limit ${start}, ${pageSize}
+    </select>
+
+    <select id="searchResultTotalRecord" resultType="java.lang.Integer">
+        select count(*)
+        from product
+        where pflag = #{pflag} and pname like "%"#{p}"%"
+    </select>
+</mapper>
