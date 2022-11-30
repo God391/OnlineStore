@@ -66,15 +66,15 @@ public class OrderServlet extends BaseServlet {
 
     public String selectMyOrdersByPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
         //1.获取参数
-        int pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
-        int pageSize = 3;
         User user = (User) request.getSession().getAttribute("user");
-        PageBean<Order> orderPageBean = null;
         if (user == null) {
             // 未登录
             request.setAttribute("msg", "请先登录");
             return "/jsp/msg.jsp";
         }
+        int pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+        int pageSize = 3;
+        PageBean<Order> orderPageBean = null;
         try {
             //2.调用service获取当前页的所有数据pageBean
             OrderService service = new OrderServiceImpl();

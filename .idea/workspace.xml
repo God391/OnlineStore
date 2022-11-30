@@ -84,6 +84,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="2HXM9FzPnRfduLUIiqII4cQCKxj" />
   <component name="ProjectViewState">
     <option name="showExcludedFiles" value="true" />
@@ -233,6 +236,7 @@
       <workItem from="1669533474691" duration="13853000" />
       <workItem from="1669626457363" duration="9440000" />
       <workItem from="1669711090651" duration="8313000" />
+      <workItem from="1669778381172" duration="2519000" />
     </task>
     <servers />
   </component>
@@ -260,38 +264,38 @@
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
     <state x="619" y="377" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1707.1019@0.0.1707.1019" timestamp="1668689449631" />
-    <state width="1662" height="79" key="GridCell.Tab.0.bottom" timestamp="1669723186992">
+    <state width="1662" height="74" key="GridCell.Tab.0.bottom" timestamp="1669780706942">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state width="1662" height="79" key="GridCell.Tab.0.bottom/0.0.1707.1019@0.0.1707.1019" timestamp="1669723186992" />
-    <state width="1662" height="79" key="GridCell.Tab.0.center" timestamp="1669723186992">
+    <state width="1662" height="74" key="GridCell.Tab.0.bottom/0.0.1707.1019@0.0.1707.1019" timestamp="1669780706942" />
+    <state width="1662" height="74" key="GridCell.Tab.0.center" timestamp="1669780706942">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state width="1662" height="79" key="GridCell.Tab.0.center/0.0.1707.1019@0.0.1707.1019" timestamp="1669723186992" />
-    <state width="1662" height="79" key="GridCell.Tab.0.left" timestamp="1669723186992">
+    <state width="1662" height="74" key="GridCell.Tab.0.center/0.0.1707.1019@0.0.1707.1019" timestamp="1669780706942" />
+    <state width="1662" height="74" key="GridCell.Tab.0.left" timestamp="1669780706942">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state width="1662" height="79" key="GridCell.Tab.0.left/0.0.1707.1019@0.0.1707.1019" timestamp="1669723186992" />
-    <state width="1662" height="79" key="GridCell.Tab.0.right" timestamp="1669723186992">
+    <state width="1662" height="74" key="GridCell.Tab.0.left/0.0.1707.1019@0.0.1707.1019" timestamp="1669780706942" />
+    <state width="1662" height="74" key="GridCell.Tab.0.right" timestamp="1669780706942">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state width="1662" height="79" key="GridCell.Tab.0.right/0.0.1707.1019@0.0.1707.1019" timestamp="1669723186992" />
-    <state width="1662" height="209" key="GridCell.Tab.1.bottom" timestamp="1669639111874">
+    <state width="1662" height="74" key="GridCell.Tab.0.right/0.0.1707.1019@0.0.1707.1019" timestamp="1669780706942" />
+    <state width="1662" height="207" key="GridCell.Tab.1.bottom" timestamp="1669780179892">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state width="1662" height="209" key="GridCell.Tab.1.bottom/0.0.1707.1019@0.0.1707.1019" timestamp="1669639111874" />
-    <state width="1662" height="209" key="GridCell.Tab.1.center" timestamp="1669639111874">
+    <state width="1662" height="207" key="GridCell.Tab.1.bottom/0.0.1707.1019@0.0.1707.1019" timestamp="1669780179892" />
+    <state width="1662" height="207" key="GridCell.Tab.1.center" timestamp="1669780179892">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state width="1662" height="209" key="GridCell.Tab.1.center/0.0.1707.1019@0.0.1707.1019" timestamp="1669639111874" />
-    <state width="1662" height="209" key="GridCell.Tab.1.left" timestamp="1669639111874">
+    <state width="1662" height="207" key="GridCell.Tab.1.center/0.0.1707.1019@0.0.1707.1019" timestamp="1669780179892" />
+    <state width="1662" height="207" key="GridCell.Tab.1.left" timestamp="1669780179892">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state width="1662" height="209" key="GridCell.Tab.1.left/0.0.1707.1019@0.0.1707.1019" timestamp="1669639111874" />
-    <state width="1662" height="209" key="GridCell.Tab.1.right" timestamp="1669639111874">
+    <state width="1662" height="207" key="GridCell.Tab.1.left/0.0.1707.1019@0.0.1707.1019" timestamp="1669780179892" />
+    <state width="1662" height="207" key="GridCell.Tab.1.right" timestamp="1669780179892">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>
-    <state width="1662" height="209" key="GridCell.Tab.1.right/0.0.1707.1019@0.0.1707.1019" timestamp="1669639111874" />
+    <state width="1662" height="207" key="GridCell.Tab.1.right/0.0.1707.1019@0.0.1707.1019" timestamp="1669780179892" />
     <state x="384" y="165" key="Maven.ArtifactSearchDialog" timestamp="1668680625426">
       <screen x="0" y="0" width="1707" height="1019" />
     </state>

@@ -6,6 +6,6 @@
 </head>
 <body>
     <h1 style="color: red">非常抱歉，发生了内部错误</h1>
-    <img src="${pageContext.request.contextPath}/img/apology.gif" alt="">
+    <img style="height: 200px" src="${pageContext.request.contextPath}/img/apology.gif" alt="">
 </body>
 </html>

@@ -116,6 +116,9 @@ public class OrderItem {
     }
 
     public String getPid(){
+        if (pid == null || "".equals(pid)) {
+            pid = product.getPid();
+        }
         return pid;
     }
 
