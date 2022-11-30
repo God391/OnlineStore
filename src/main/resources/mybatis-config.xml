@@ -15,7 +15,7 @@
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql:///store?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;characterEncoding=UTF-8"/>
                 <property name="username" value="root"/>
-                <property name="password" value="admin"/>
+                <property name="password" value="123456"/>
             </dataSource>
         </environment>
     </environments>
