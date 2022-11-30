@@ -8,3 +8,5 @@ src/main/resources/mybatis-config.xml
 pom.xml
 
 
+
+*.tmp
