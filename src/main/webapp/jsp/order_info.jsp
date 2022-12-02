@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page isELIgnored="false" %>
@@ -32,7 +32,7 @@
 <body>
 
 <%--静态包含导入head.jsp--%>
-<%@include file="/jsp/head.jsp"%>
+<%@include file="/jsp/head.jsp" %>
 
 <div class="container">
     <div class="row">
@@ -90,72 +90,82 @@
 
     <div>
         <hr/>
-        <form class="form-horizontal" style="margin-top:5px;margin-left:150px;">
+        <form action="${pageContext.request.contextPath}/order" id="orderForm" method="post" class="form-horizontal"
+              style="margin-top:5px;margin-left:150px;">
+            <!-- 提交的方法 -->
+            <input type="hidden" name="method" value="pay">
+            <!-- 订单号 -->
+            <input type="hidden" name="oid" value="${order.oid}">
             <div class="form-group">
                 <label for="username" class="col-sm-1 control-label">地址</label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" id="username" placeholder="请输入收货地址">
+                    <input type="text" name=="address" class="form-control" id="username" placeholder="请输入收货地址">
                 </div>
             </div>
             <div class="form-group">
                 <label for="inputPassword3" class="col-sm-1 control-label">收货人</label>
                 <div class="col-sm-5">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="请输收货人">
+                    <input type="text" name="name" class="form-control" id="inputPassword3" placeholder="请输收货人">
                 </div>
             </div>
             <div class="form-group">
                 <label for="confirmpwd" class="col-sm-1 control-label">电话</label>
                 <div class="col-sm-5">
-                    <input type="password" class="form-control" id="confirmpwd" placeholder="请输入联系方式">
+                    <input type="text" name="telephone" class="form-control" id="confirmpwd"
+                           placeholder="请输入联系方式">
                 </div>
             </div>
-        </form>
 
-        <hr/>
 
-        <div style="margin-top:5px;margin-left:150px;">
-            <strong>选择银行：</strong>
-            <p>
-                <br/>
-                <input type="radio" name="pd_FrpId" value="ICBC-NET-B2C" checked="checked"/>工商银行
-                <img src="${pageContext.request.contextPath}/bank_img/icbc.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="pd_FrpId" value="BOC-NET-B2C"/>中国银行
-                <img src="${pageContext.request.contextPath}/bank_img/bc.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="pd_FrpId" value="ABC-NET-B2C"/>农业银行
-                <img src="${pageContext.request.contextPath}/bank_img/abc.bmp" align="middle"/>
-                <br/>
-                <br/>
-                <input type="radio" name="pd_FrpId" value="BOCO-NET-B2C"/>交通银行
-                <img src="${pageContext.request.contextPath}/bank_img/bcc.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="pd_FrpId" value="PINGANBANK-NET"/>平安银行
-                <img src="${pageContext.request.contextPath}/bank_img/pingan.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="pd_FrpId" value="CCB-NET-B2C"/>建设银行
-                <img src="${pageContext.request.contextPath}/bank_img/ccb.bmp" align="middle"/>
-                <br/>
-                <br/>
-                <input type="radio" name="pd_FrpId" value="CEB-NET-B2C"/>光大银行
-                <img src="${pageContext.request.contextPath}/bank_img/guangda.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="pd_FrpId" value="CMBCHINA-NET-B2C"/>招商银行
-                <img src="${pageContext.request.contextPath}/bank_img/cmb.bmp" align="middle"/>
+            <hr/>
+
+            <div style="margin-top:5px;margin-left:150px;">
+                <strong>选择银行：</strong>
+                <p>
+                    <br/>
+                    <input type="radio" name="pd_FrpId" value="ICBC-NET-B2C" checked="checked"/>工商银行
+                    <img src="${pageContext.request.contextPath}/bank_img/icbc.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="pd_FrpId" value="BOC-NET-B2C"/>中国银行
+                    <img src="${pageContext.request.contextPath}/bank_img/bc.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="pd_FrpId" value="ABC-NET-B2C"/>农业银行
+                    <img src="${pageContext.request.contextPath}/bank_img/abc.bmp" align="middle"/>
+                    <br/>
+                    <br/>
+                    <input type="radio" name="pd_FrpId" value="BOCO-NET-B2C"/>交通银行
+                    <img src="${pageContext.request.contextPath}/bank_img/bcc.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="pd_FrpId" value="PINGANBANK-NET"/>平安银行
+                    <img src="${pageContext.request.contextPath}/bank_img/pingan.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="pd_FrpId" value="CCB-NET-B2C"/>建设银行
+                    <img src="${pageContext.request.contextPath}/bank_img/ccb.bmp" align="middle"/>
+                    <br/>
+                    <br/>
+                    <input type="radio" name="pd_FrpId" value="CEB-NET-B2C"/>光大银行
+                    <img src="${pageContext.request.contextPath}/bank_img/guangda.bmp" align="middle"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="radio" name="pd_FrpId" value="CMBCHINA-NET-B2C"/>招商银行
+                    <img src="${pageContext.request.contextPath}/bank_img/cmb.bmp" align="middle"/>
                 <div>
                     <input type="radio" name="pd_FrpId" value="CMBCHINA-NET-B2C"/>
-                    <img src="${pageContext.request.contextPath}/bank_img/WechatPay.png" style="height: 70px" align="middle"/>
+                    <img src="${pageContext.request.contextPath}/bank_img/WechatPay.png" style="height: 70px"
+                         align="middle"/>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="pd_FrpId" value="CMBCHINA-NET-B2C"/>
-                    <img src="${pageContext.request.contextPath}/bank_img/AliPay.png" style="height: 70px" align="middle"/>
+                    <img src="${pageContext.request.contextPath}/bank_img/AliPay.png" style="height: 70px"
+                         align="middle"/>
                 </div>
-            </p>
-            <hr/>
-            <p style="text-align:right;margin-right:100px;">
-                <a href="javascript:document.getElementById('orderForm').submit();">
-                    <img src="${pageContext.request.contextPath}/images/finalbutton.gif" width="204" height="51"
-                         border="0"/>
-                </a>
-            </p>
-            <hr/>
+                </p>
+                <hr/>
+                <p style="text-align:right;margin-right:100px;">
+                    <a href="javascript:document.getElementById('orderForm').submit();">
+                        <img src="${pageContext.request.contextPath}/images/finalbutton.gif" width="204" height="51"
+                             border="0"/>
+                    </a>
+                </p>
+                <hr/>
 
-        </div>
+            </div>
+        </form>
     </div>
+
 
 </div>
 

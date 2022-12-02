@@ -1,20 +1,23 @@
 package web.servlet;
 
 import constant.Contant;
+import mapper.OrderMapper;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import pojo.*;
 import service.OrderService;
 import service.impl.OrderServiceImpl;
 import utils.UUIDUtils;
 import web.servlet.base.BaseServlet;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
-import java.util.List;
+import java.util.ResourceBundle;
 
 @WebServlet("/order")
 public class OrderServlet extends BaseServlet {
@@ -25,6 +28,7 @@ public class OrderServlet extends BaseServlet {
 
     /**
      * 保存订单
+     *
      * @param request
      * @param response
      * @return
@@ -33,7 +37,7 @@ public class OrderServlet extends BaseServlet {
     public String save(HttpServletRequest request, HttpServletResponse response) throws Exception {
         //0.获取用户
         User user = (User) request.getSession().getAttribute("user");
-        if(user == null){
+        if (user == null) {
             //未登录
             request.setAttribute("msg", "请先登录");
             return "/jsp/msg.jsp";
@@ -79,7 +83,7 @@ public class OrderServlet extends BaseServlet {
             //2.调用service获取当前页的所有数据pageBean
             OrderService service = new OrderServiceImpl();
             orderPageBean = service.selectMyOrdersByPage(pageNumber, pageSize, user.getUid());
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             request.setAttribute("msg", "获取我的订单失败");
             return "/jsp/msg.jsp";
@@ -88,4 +92,45 @@ public class OrderServlet extends BaseServlet {
         request.setAttribute("pb", orderPageBean);
         return "/jsp/order_list.jsp";
     }
+
+    /**
+     * 在线支付
+     *
+     * @param request
+     * @param response
+     * @return
+     * @throws Exception
+     *//*
+    public String pay(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        // 1. 获取收货人信息，获取oid，获取银行
+
+        // 2. 调用 service 获取订单，修改收货人信息，更新订单
+
+        // 3. 拼接给第三方的 url
+
+        // 4. 重定向
+        //接受参数
+        String address = request.getParameter("address");
+        String name = request.getParameter("name");
+        String telephone = request.getParameter("telephone");
+        String oid = request.getParameter("oid");
+
+        //通过id获取order
+
+        OrderService service = new OrderServiceImpl();
+
+
+        order.setAddress(address);
+        order.setName(name);
+        order.setTelephone(telephone);
+
+        //更新order
+        s.updateOrder(order);
+
+        respone.sendRedirect(sb);
+
+        return null;
+        //
+    }*/
+
 }
