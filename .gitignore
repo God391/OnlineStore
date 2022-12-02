@@ -1,7 +1,12 @@
-
+#忽略所有.svn目录
+.svn/
+#忽略所有target目录
 target/
-
+#忽略所有.idea目录
 .idea/
+#忽略所有.iml文件
+*.iml
+
 
 src/main/resources/mybatis-config.xml
 
@@ -12,3 +17,22 @@ pom.xml
 *.tmp
 .DS_Store
 ~$_课程设计报告_33,30,35.docx
+
+.mymetadata
+.checkstyle
+.classpath
+.project
+.class
+.war
+.zip
+.rar
+.idea
+*.iml
+.settings/*
+/indexes/*
+/target/*
+/src/main/webapp/WEB-INF/classes/*
+/src/main/webapp/userfiles/*
+/target/
+/src/main/resources/rebel.xml
+/src/main/resources/jeesite.properties
