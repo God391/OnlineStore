@@ -18,4 +18,8 @@ public interface CategoryMapper {
      */
     Category selectById(String cid);
 
+    /**
+     * 添加分类
+     */
+    void addUI(String cname);
 }

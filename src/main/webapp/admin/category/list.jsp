@@ -1,5 +1,8 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ page isELIgnored="false" %>
 <HTML>
 	<HEAD>
 		<meta http-equiv="Content-Language" content="zh-cn">
@@ -50,16 +53,16 @@
 										删除
 									</td>
 								</tr>
-								<c:forEach var="c" items="${ list }">
+								<c:forEach var="c" items="${ list }" varStatus="vs">
 										<tr onmouseover="this.style.backgroundColor = 'white'"
 											onmouseout="this.style.backgroundColor = '#F5FAFE';">
 											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
 												width="18%">
-												
+												${vs.count}
 											</td>
 											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
 												width="17%">
-												
+												${c.cname }
 											</td>
 											<td align="center" style="HEIGHT: 22px">
 												<a href="${ pageContext.request.contextPath }/adminCategory">

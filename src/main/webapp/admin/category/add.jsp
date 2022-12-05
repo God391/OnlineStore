@@ -1,4 +1,8 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+		 pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ page isELIgnored="false" %>
 <HTML>
 	<HEAD>
 		<meta http-equiv="Content-Language" content="zh-cn">
@@ -7,8 +11,8 @@
 	</HEAD>
 	
 	<body>
-		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/adminCategory" method="post">
-			<input type="hidden" name="method" value="add">
+		<form id="userAction_save_do" name="Form1" action="${pageContext.request.contextPath}/admin" method="post">
+			<input type="hidden" name="method" value="save">
 			&nbsp;
 			<table cellSpacing="1" cellPadding="5" width="100%" align="center" bgColor="#eeeeee" style="border: 1px solid #8ba7e3" border="0">
 				<tr>
