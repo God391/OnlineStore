@@ -2,6 +2,7 @@ package mapper;
 
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import pojo.Category;
 
 import java.util.List;
@@ -21,5 +22,5 @@ public interface CategoryMapper {
     /**
      * 添加分类
      */
-    void addUI(String cname);
+    void addUI(@Param("cname")String cname, @Param("cid")String cid);
 }

@@ -16,7 +16,7 @@
     </select>
 
     <insert id="addUI">
-        insert into category(cname)
-        value (#{cname});
+        insert into category(cname,cid)
+        values (#{cname},#{cid});
     </insert>
 </mapper>

@@ -46,7 +46,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void addUI(String cname) throws Exception {
+    public void addUI(String cname,String cid) throws Exception {
         //接收参数
 
 
@@ -66,10 +66,10 @@ public class CategoryServiceImpl implements CategoryService {
         CategoryMapper mapper = session.getMapper(CategoryMapper.class);
 
         //4.执行方法
-        mapper.addUI(cname);
+        mapper.addUI(cname,cid);
 
         //提交事务
-        session.commit(true);
+        session.commit();
 
         //5.关闭方法
         session.close();

@@ -60,7 +60,7 @@ public class ProductServlet extends BaseServlet {
         //3.将pageProducts放入request中
         request.setAttribute("pb", pb);
         // 4.返回结果
-        return "/jsp/product_list.jsp";
+        return "/admin/product/list.jsp";
     }
 
     /**

@@ -65,20 +65,18 @@ public class AdminCategoryServlet extends BaseServlet {
      * @throws Exception
      */
     public String save(HttpServletRequest request, HttpServletResponse response) throws Exception {
-//        //1.封装Category对象
-//        Category c = new Category();
-//        c.setCid(UUIDUtils.getId());
-//        c.setCid(request.getParameter("cname"));
-
-        //获取值
-        String name = request.getParameter("method");
+        //1.封装Category对象
+        Category c = new Category();
+        c.setCid(UUIDUtils.getId());
+        c.setCname(request.getParameter("cname"));
 
         //2.调用mybatis完成添加操作
         CategoryServiceImpl service = new CategoryServiceImpl();
-        service.addUI(name);
+        service.addUI(c.getCname(),c.getCid());
 
         //3.重定向
-        response.sendRedirect(request.getContextPath()+"/admin?method=addUI");
+//        response.sendRedirect(request.getContextPath()+"/addUI");
+        findAll(request,response);
         return null;
     }
 }
