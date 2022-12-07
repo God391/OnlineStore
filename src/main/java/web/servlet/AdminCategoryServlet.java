@@ -78,5 +78,25 @@ public class AdminCategoryServlet extends BaseServlet {
 //        response.sendRedirect(request.getContextPath()+"/addUI");
         findAll(request,response);
         return null;
+}
+
+    /**
+     * 删除分类
+     * @param request
+     * @param response
+     * @return
+     * @throws Exception
+     */
+    public String delete(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        //1.封装Category对象
+        Category c = new Category();
+//        c.setCid(UUIDUtils.getId());
+        c.setCid(request.getParameter("cid"));
+
+        //2.调用mybatis完成添加操作
+        CategoryServiceImpl service = new CategoryServiceImpl();
+        service.delete(c.getCid());
+        findAll(request,response);
+        return null;
     }
 }

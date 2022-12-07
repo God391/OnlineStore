@@ -10,4 +10,6 @@ public interface CategoryService {
     List<Category> findAll2() throws Exception;
 
     void addUI(String cname,String cid) throws Exception;
+
+    void delete(String cid) throws Exception;
 }

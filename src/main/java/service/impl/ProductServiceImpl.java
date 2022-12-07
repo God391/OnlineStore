@@ -82,4 +82,20 @@ public class ProductServiceImpl implements ProductService {
         pb.setTotalRecord(totalRecord);
         return pb;
     }
+
+    @Override
+    public List<Product> selecAll() {
+        //2.获取SqlSession对象
+        SqlSession session = factory.openSession();
+
+        //3.获取Mapper接口的代理对象
+        ProductMapper mapper = session.getMapper(ProductMapper.class);
+
+        //4.执行方法
+        List<Product> products = mapper.selectAll();
+
+        //5.关闭方法
+        session.close();
+        return products;
+    }
 }

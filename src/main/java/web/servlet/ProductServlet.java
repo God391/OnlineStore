@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/product")
 public class ProductServlet extends BaseServlet {
@@ -85,5 +86,27 @@ public class ProductServlet extends BaseServlet {
         request.setAttribute("pb", pb);
         // 4.返回结果
         return "/jsp/product_list.jsp";
+    }
+
+    /**
+     * 查询所有商品
+     */
+    public String selectAll(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        System.out.println("xxx");
+
+        try {
+        //1.调用所有service 获取所有的商品
+        ProductServiceImpl product = new ProductServiceImpl();
+        List<Product> list = product.selecAll();
+
+        //2.将返回值放入request域中请求转发
+        request.setAttribute("list", list);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException();
+        }
+
+        return "/admin/product/list.jsp";
     }
 }

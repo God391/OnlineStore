@@ -30,4 +30,9 @@ public interface ProductService {
      *分页展示搜索结果
      */
     PageBean<Product> searchSelectByPage(int pageNumber, int pageSize, String p);
+
+    /**
+     * 展示所有方法
+     */
+    List<Product> selecAll();
 }

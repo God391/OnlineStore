@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.CategoryMapper">
 
+
     <select id="selectAll" resultType="pojo.Category">
         select *
         from category
@@ -19,4 +20,10 @@
         insert into category(cname,cid)
         values (#{cname},#{cid});
     </insert>
+
+    <delete id="deleteByid">
+        delete
+        from category
+        where cid = #{cid};
+    </delete>
 </mapper>

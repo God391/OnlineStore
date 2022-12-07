@@ -75,4 +75,23 @@ public class CategoryServiceImpl implements CategoryService {
         session.close();
     }
 
+    @Override
+    public void delete(String cid) throws Exception {
+        //2.获取SqlSession对象
+        SqlSession session = sqlSessionFactory.openSession();
+
+        //3.获取Mapper接口的代理对象
+        CategoryMapper mapper = session.getMapper(CategoryMapper.class);
+
+        //4.执行方法
+        mapper.deleteByid(cid);
+
+        //提交事务
+        session.commit();
+
+        //5.关闭方法
+        session.close();
+    }
+
+
 }
