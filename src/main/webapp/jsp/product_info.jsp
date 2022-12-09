@@ -33,13 +33,11 @@
 <%--			静态包含导入head.jsp--%>
 <%@include file="/jsp/head.jsp" %>
 
-
 <div class="container">
     <div class="row">
         <div style="border: 1px solid #e4e4e4;width:930px;margin-bottom:10px;margin:0 auto;padding:10px;margin-bottom:10px;">
-            <a href="./index.htm">首页&nbsp;&nbsp;&gt;</a>
-            <a href="./蔬菜分类.htm">蔬菜&nbsp;&nbsp;&gt;</a>
-            <a>无公害蔬菜</a>
+            <a href="${pageContext.request.contextPath}/index">首页&nbsp;&nbsp;&gt;</a>
+            <a href="${pageContext.request.contextPath}/product?method=selectByPage&pageNumber=1&cid=${product.category.cid}">${product.category.cname}</a>
         </div>
 
         <div style="margin:0 auto;width:950px;">
@@ -54,25 +52,26 @@
                     <div>${product.pid}</div>
                 </div>
 
-                <div style="margin:10px 0 10px 0;">商城价: <strong style="color:#ef0101;">￥：${product.shop_price}元</strong>
+                <div style="margin:10px 0 10px 0;">商城价: <strong
+                        style="color:#ef0101;">￥：${product.shop_price}元</strong>
                     市场价：
                     <del>￥${product.market_price}元</del>
                 </div>
 
                 <div style="margin:10px 0 10px 0;">促销: <a target="_blank" title="限时抢购 (2014-07-30 ~ 2015-01-01)"
-                                                          style="background-color: #f07373;">限时抢购</a></div>
+                                                            style="background-color: #f07373;">限时抢购</a></div>
 
                 <div style="padding:10px;border:1px solid #e7dbb1;width:330px;margin:15px 0 10px 0;;background-color: #fffee6;">
                     <div style="margin:5px 0 10px 0;">白色</div>
 
-                <form action="${pageContext.request.contextPath}/cart" id="cartForm" method="post">
-                    <!--提交的方法-->
-                    <input type="hidden" name="method" value="addToCart">
-                    <input type="hidden" name="pid" value="${product.pid}">
-                    <div style="border-bottom: 1px solid #faeac7;margin-top:20px;padding-left: 10px;">购买数量:
-                        <input type="text" id="quantity" name="count" value="1" maxlength="4" size="10" >
-                    </div>
-                </form>
+                    <form action="${pageContext.request.contextPath}/cart" id="cartForm" method="post">
+                        <!--提交的方法-->
+                        <input type="hidden" name="method" value="addToCart">
+                        <input type="hidden" name="pid" value="${product.pid}">
+                        <div style="border-bottom: 1px solid #faeac7;margin-top:20px;padding-left: 10px;">购买数量:
+                            <input type="text" id="quantity" name="count" value="1" maxlength="4" size="10">
+                        </div>
+                    </form>
 
                     <div style="margin:20px 0 10px 0;;text-align: center;">
                         <a href="javascript:void(0)" onclick="subForm()">

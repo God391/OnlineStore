@@ -5,6 +5,7 @@
 <mapper namespace="mapper.CategoryMapper">
 
 
+
     <select id="selectAll" resultType="pojo.Category">
         select *
         from category
@@ -26,4 +27,11 @@
         from category
         where cid = #{cid};
     </delete>
+
+    <select id="queryById" resultType="pojo.Category">
+        select *
+        from category
+        where cid = #{cid}
+    </select>
+
 </mapper>

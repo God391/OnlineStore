@@ -1,6 +1,7 @@
 package constant;
 
 public interface Contant {
+
     /**
      * 用户未激活
      */
@@ -32,10 +33,23 @@ public interface Contant {
     int PRODUCT_IS_DOWN = 0;
 
     /**
-     * 订单状态
+     * 订单未支付
      */
     int ORDER_NON_PAYMENT = 0;
+
+    /**
+     * 订单已支付
+     */
     int ORDER_PAYED = 1;
+
+    /**
+     * 订单已发货
+     */
     int ORDER_SHIPPED = 2;
+
+    /**
+     * 订单已完成
+     */
     int ORDER_COMPLETE = 3;
+
 }

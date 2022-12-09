@@ -23,7 +23,7 @@
         limit #{startIndex}, #{pageSize}
     </select>
 
-<!--    多表查询-->
+    <!--    多表查询-->
     <resultMap id="orderRslMap" type="pojo.Order">
         <id column="oid" property="oid"/>
         <id column="ordertime" property="ordertime"/>
@@ -43,4 +43,5 @@
         order by ordertime desc
         limit #{startIndex}, #{pageSize}
     </select>
+
 </mapper>

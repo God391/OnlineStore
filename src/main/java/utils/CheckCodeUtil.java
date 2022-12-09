@@ -1,10 +1,13 @@
-package com.itheima.util;
+package utils;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -14,7 +17,7 @@ import java.util.Random;
 public class CheckCodeUtil {
 
     public static final String VERIFY_CODES = "123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    private static Random random = new Random();
+    private static final Random random = new Random();
 
 
     /**
@@ -81,7 +84,6 @@ public class CheckCodeUtil {
     }
 
 
-
     /**
      * 生成指定验证码图像文件
      *
@@ -129,9 +131,7 @@ public class CheckCodeUtil {
 
         // 创建颜色集合，使用java.awt包下的类
         Color[] colors = new Color[5];
-        Color[] colorSpaces = new Color[]{Color.WHITE, Color.CYAN,
-                Color.GRAY, Color.LIGHT_GRAY, Color.MAGENTA, Color.ORANGE,
-                Color.PINK, Color.YELLOW};
+        Color[] colorSpaces = new Color[]{Color.WHITE, Color.CYAN, Color.GRAY, Color.LIGHT_GRAY, Color.MAGENTA, Color.ORANGE, Color.PINK, Color.YELLOW};
         float[] fractions = new float[colors.length];
         for (int i = 0; i < colors.length; i++) {
             colors[i] = colorSpaces[rand.nextInt(colorSpaces.length)];
@@ -241,10 +241,7 @@ public class CheckCodeUtil {
         int phase = random.nextInt(2);
 
         for (int i = 0; i < h1; i++) {
-            double d = (double) (period >> 1)
-                    * Math.sin((double) i / (double) period
-                    + (6.2831853071795862D * (double) phase)
-                    / (double) frames);
+            double d = (double) (period >> 1) * Math.sin((double) i / (double) period + (6.2831853071795862D * (double) phase) / (double) frames);
             g.copyArea(0, i, w1, 1, (int) d, 0);
             if (borderGap) {
                 g.setColor(color);
@@ -263,10 +260,7 @@ public class CheckCodeUtil {
         int frames = 20;
         int phase = 7;
         for (int i = 0; i < w1; i++) {
-            double d = (double) (period >> 1)
-                    * Math.sin((double) i / (double) period
-                    + (6.2831853071795862D * (double) phase)
-                    / (double) frames);
+            double d = (double) (period >> 1) * Math.sin((double) i / (double) period + (6.2831853071795862D * (double) phase) / (double) frames);
             g.copyArea(i, 0, 1, h1, 0, (int) d);
             if (borderGap) {
                 g.setColor(color);

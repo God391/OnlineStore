@@ -13,9 +13,10 @@ import java.io.InputStream;
 public class SqlSessionFactoryUtils {
     /**
      * 第一次加载类时执行静态代码块，创建Factory
-     *  提升factory作用范围,使得static也能调
+     * 提升factory作用范围,使得static也能调
      */
-    private static SqlSessionFactory sqlSessionFactory;
+    private static final SqlSessionFactory sqlSessionFactory;
+
     static {
         String resource = "mybatis-config.xml";
         InputStream inputStream = null;
@@ -26,7 +27,8 @@ public class SqlSessionFactoryUtils {
         }
         sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
     }
-    public static SqlSessionFactory getSqlSessionFactory(){
+
+    public static SqlSessionFactory getSqlSessionFactory() {
         return sqlSessionFactory;
     }
 }
