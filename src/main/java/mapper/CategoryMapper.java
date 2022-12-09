@@ -38,6 +38,8 @@ public interface CategoryMapper {
      * 根据 id 查询类别对象
      * @param cid
      *@return
+     * @return
      */
+
     Category queryById(String cid);
 }
