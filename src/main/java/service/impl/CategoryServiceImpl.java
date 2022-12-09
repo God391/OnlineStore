@@ -59,7 +59,6 @@ public class CategoryServiceImpl implements CategoryService {
         return categories;
     }
 
-    @Override
     public void addUI(String cname,String cid) throws Exception {
         //接收参数
 
@@ -89,7 +88,6 @@ public class CategoryServiceImpl implements CategoryService {
         session.close();
     }
 
-    @Override
     public void delete(String cid) throws Exception {
         //2.获取SqlSession对象
         SqlSession session = sqlSessionFactory.openSession();
