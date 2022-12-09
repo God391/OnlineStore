@@ -14,15 +14,16 @@ public class Product {
 
     private Integer is_hot;  //是否热门  1:热门    0:不热门
     private String pdesc;
-    private Integer pflag;	//是否下架    1:下架	0:未下架
+    private Integer pflag;    //是否下架    1:下架	0:未下架
 
     //在多的一方放入一个一的一方的对象 用来表示属于那个分类
     private Category category;
+    private String cid;
 
     public Product() {
     }
 
-    public Product(String pid, String pname, Double market_price, Double shop_price, String pimage, Date pdate, Integer is_hot, String pdesc, Integer pflag, Category category) {
+    public Product(String pid, String pname, Double market_price, Double shop_price, String pimage, Date pdate, Integer is_hot, String pdesc, Integer pflag, Category category, String cid) {
         this.pid = pid;
         this.pname = pname;
         this.market_price = market_price;
@@ -33,10 +34,20 @@ public class Product {
         this.pdesc = pdesc;
         this.pflag = pflag;
         this.category = category;
+        this.cid = cid;
+    }
+
+    public String getCid() {
+        return cid;
+    }
+
+    public void setCid(String cid) {
+        this.cid = cid;
     }
 
     /**
      * 获取
+     *
      * @return pid
      */
     public String getPid() {
@@ -45,6 +56,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param pid
      */
     public void setPid(String pid) {
@@ -53,6 +65,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return pname
      */
     public String getPname() {
@@ -61,6 +74,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param pname
      */
     public void setPname(String pname) {
@@ -69,6 +83,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return market_price
      */
     public Double getMarket_price() {
@@ -77,6 +92,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param market_price
      */
     public void setMarket_price(Double market_price) {
@@ -85,6 +101,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return shop_price
      */
     public Double getShop_price() {
@@ -93,6 +110,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param shop_price
      */
     public void setShop_price(Double shop_price) {
@@ -101,6 +119,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return pimage
      */
     public String getPimage() {
@@ -109,6 +128,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param pimage
      */
     public void setPimage(String pimage) {
@@ -117,6 +137,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return pdate
      */
     public Date getPdate() {
@@ -125,6 +146,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param pdate
      */
     public void setPdate(Date pdate) {
@@ -133,6 +155,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return is_hot
      */
     public Integer getIs_hot() {
@@ -141,6 +164,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param is_hot
      */
     public void setIs_hot(Integer is_hot) {
@@ -149,6 +173,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return pdesc
      */
     public String getPdesc() {
@@ -157,6 +182,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param pdesc
      */
     public void setPdesc(String pdesc) {
@@ -165,6 +191,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return pflag
      */
     public Integer getPflag() {
@@ -173,6 +200,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param pflag
      */
     public void setPflag(Integer pflag) {
@@ -181,6 +209,7 @@ public class Product {
 
     /**
      * 获取
+     *
      * @return category
      */
     public Category getCategory() {
@@ -189,6 +218,7 @@ public class Product {
 
     /**
      * 设置
+     *
      * @param category
      */
     public void setCategory(Category category) {
@@ -197,6 +227,18 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{pid = " + pid + ", pname = " + pname + ", market_price = " + market_price + ", shop_price = " + shop_price + ", pimage = " + pimage + ", pdate = " + pdate + ", is_hot = " + is_hot + ", pdesc = " + pdesc + ", pflag = " + pflag + ", category = " + category + "}";
+        return "Product{" +
+                "pid='" + pid + '\'' +
+                ", pname='" + pname + '\'' +
+                ", market_price=" + market_price +
+                ", shop_price=" + shop_price +
+                ", pimage='" + pimage + '\'' +
+                ", pdate=" + pdate +
+                ", is_hot=" + is_hot +
+                ", pdesc='" + pdesc + '\'' +
+                ", pflag=" + pflag +
+                ", category=" + category +
+                ", cid='" + cid + '\'' +
+                '}';
     }
 }

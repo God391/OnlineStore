@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.CategoryMapper">
+
     <select id="selectAll" resultType="pojo.Category">
         select *
         from category
@@ -13,4 +14,11 @@
         from category
         where cid = #{cid}
     </select>
+
+    <select id="queryById" resultType="pojo.Category">
+        select *
+        from category
+        where cid = #{cid}
+    </select>
+
 </mapper>

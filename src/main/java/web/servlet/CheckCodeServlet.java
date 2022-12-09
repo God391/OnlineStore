@@ -12,10 +12,12 @@ import java.io.IOException;
 public class CheckCodeServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        //生成验证码
+
+        // 生成验证码
         ServletOutputStream outputStream = response.getOutputStream();
-        String checkCode = com.itheima.util.CheckCodeUtil.outputVerifyImage(100, 50, outputStream, 4);
-        //放入session方便对比
+        String checkCode = utils.CheckCodeUtil.outputVerifyImage(100, 50, outputStream, 4);
+
+        // 放入 session 方便对比
         request.getSession().setAttribute("checkCodeGen", checkCode);
     }
 

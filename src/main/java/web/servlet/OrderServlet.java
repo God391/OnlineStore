@@ -1,11 +1,6 @@
 package web.servlet;
 
 import constant.Contant;
-import mapper.OrderMapper;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import pojo.*;
 import service.OrderService;
 import service.impl.OrderServiceImpl;
@@ -15,16 +10,10 @@ import web.servlet.base.BaseServlet;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.InputStream;
 import java.util.Date;
-import java.util.ResourceBundle;
 
 @WebServlet("/order")
 public class OrderServlet extends BaseServlet {
-    /**
-     * 规定版本序列化id，提高版本兼容性
-     */
-    private static final long serialVersionUID = 1L;
 
     /**
      * 保存订单
@@ -35,6 +24,7 @@ public class OrderServlet extends BaseServlet {
      * @throws Exception
      */
     public String save(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
         //0.获取用户
         User user = (User) request.getSession().getAttribute("user");
         if (user == null) {
@@ -42,6 +32,7 @@ public class OrderServlet extends BaseServlet {
             request.setAttribute("msg", "请先登录");
             return "/jsp/msg.jsp";
         }
+
         //1.封装订单
         Cart cart = (Cart) request.getSession().getAttribute("cart");
         Order order = new Order();
@@ -60,16 +51,28 @@ public class OrderServlet extends BaseServlet {
             //将订单项放入订单中
             order.getItems().add(orderItem);
         }
+
         //2.调用service保存
         OrderService service = new OrderServiceImpl();
         service.save(order);
+
         //3.请求转发
         request.setAttribute("order", order);
+
         return "/jsp/order_info.jsp";
+
     }
 
+    /**
+     * 分页展示我的订单
+     * @param request
+     * @param response
+     * @return
+     * @throws Exception
+     */
     public String selectMyOrdersByPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        //1.获取参数
+
+        // 1. 获取参数
         User user = (User) request.getSession().getAttribute("user");
         if (user == null) {
             // 未登录
@@ -80,7 +83,7 @@ public class OrderServlet extends BaseServlet {
         int pageSize = 3;
         PageBean<Order> orderPageBean = null;
         try {
-            //2.调用service获取当前页的所有数据pageBean
+            // 2. 调用 service 获取当前页的所有数据 pageBean
             OrderService service = new OrderServiceImpl();
             orderPageBean = service.selectMyOrdersByPage(pageNumber, pageSize, user.getUid());
         } catch (Exception e) {
@@ -88,9 +91,12 @@ public class OrderServlet extends BaseServlet {
             request.setAttribute("msg", "获取我的订单失败");
             return "/jsp/msg.jsp";
         }
-        //3.将pageBean放入request域中，请求转发到order list
+
+        // 3. 将 pageBean 放入 request 域中，请求转发到 order list
         request.setAttribute("pb", orderPageBean);
+
         return "/jsp/order_list.jsp";
+
     }
 
     /**

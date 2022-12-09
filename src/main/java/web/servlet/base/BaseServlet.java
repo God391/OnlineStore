@@ -15,22 +15,22 @@ import java.lang.reflect.Method;
 public class BaseServlet extends HttpServlet {
 
     /**
-     * service不再转发给doPost或doGet,而是直接执行方法
+     * service 不再转发给 doPost 或 doGet,而是直接执行方法
      */
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //1.获取方法名称
+        // 1. 获取方法名称
         String methodName = request.getParameter("method");
-        //1.1判断方法参数是否为空,为空执行默认方法
+        // 1.1 判断方法参数是否为空,为空执行默认方法
         if(methodName==null || methodName.trim().length() == 0){
             methodName = "index";
         }
-        //2.获取方法对象
+        // 2. 获取方法对象
         try {
             Method method = this.getClass().getMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
-            //3.执行方法，获取返回值
+            // 3. 执行方法，获取返回值
             String path = (String) method.invoke(this, request, response);
-            //4.判断返回值是否为空,不为空则请求转发
+            // 4. 判断返回值是否为空,不为空则请求转发
             if(path != null){
                 request.getRequestDispatcher(path).forward(request, response);
             }
