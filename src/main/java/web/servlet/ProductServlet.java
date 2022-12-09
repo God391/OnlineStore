@@ -61,7 +61,7 @@ public class ProductServlet extends BaseServlet {
         //3.将pageProducts放入request中
         request.setAttribute("pb", pb);
         // 4.返回结果
-        return "/admin/product/list.jsp";
+        return "/jsp/product_list.jsp";
     }
 
     /**
@@ -92,7 +92,6 @@ public class ProductServlet extends BaseServlet {
      * 查询所有商品
      */
     public String selectAll(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        System.out.println("xxx");
 
         try {
         //1.调用所有service 获取所有的商品
