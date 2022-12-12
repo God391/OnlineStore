@@ -20,9 +20,9 @@
     </filter>
     <filter-mapping>
         <filter-name>PrivilegeFilter</filter-name>
-        <url-pattern>/jsp/order_list.jsp</url-pattern>
-        <url-pattern>/jsp/order_info.jsp</url-pattern>
-        <url-pattern>/jsp/cart.jsp</url-pattern>
+        <url-pattern>/order/*</url-pattern>
+        <url-pattern>/cart/*</url-pattern>
+        <url-pattern>/comment/*</url-pattern>
     </filter-mapping>
 
     <error-page>

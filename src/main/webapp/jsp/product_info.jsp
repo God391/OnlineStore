@@ -30,7 +30,7 @@
 </head>
 
 <body>
-<%--			静态包含导入head.jsp--%>
+<%--静态包含导入head.jsp--%>
 <%@include file="/jsp/head.jsp" %>
 
 <div class="container">
@@ -130,7 +130,9 @@
                         <th><strong>商品评论</strong></th>
                     </tr>
                     <tr class="warning">
-                        <th>暂无商品评论信息 <a>[发表商品评论]</a></th>
+                        <th>暂无商品评论信息
+                            <a href="${pageContext.request.contextPath}/comment?method=addCommentUi&pid=${product.pid}">[发表商品评论]</a>
+                        </th>
                     </tr>
                     </tbody>
                 </table>
