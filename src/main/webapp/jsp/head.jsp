@@ -41,7 +41,7 @@
             list-style-type: none;
             position: absolute;
             height: 50px;
-            width: 217px;
+            width: 312px;
             right: 30%;
             top: 0;
         }
@@ -51,31 +51,6 @@
     </style>
 </head>
 <body>
-<%--菜单栏
-<div class="container-fluid">
-    <div class="col-md-4">
-        <img style="height: 55px" src="${pageContext.request.contextPath}/img/logo2.png"/>
-    </div>
-    <div class="col-md-5">
-        <img src="${pageContext.request.contextPath}/img/header.png"/>
-    </div>
-    <div class="col-md-3" style="padding-top:20px">
-        <ol class="list-inline">
-            <c:if test="${empty user}">
-                <li><a href="${pageContext.request.contextPath}/user?method=loginUi">登录</a></li>
-                <li><a href="${pageContext.request.contextPath}/user?method=registerUi">注册</a></li>
-            </c:if>
-            <c:if test="${not empty user}">
-                <li>${user.username}：你好！</li>
-                <li>
-                    <a href="${pageContext.request.contextPath}/order?method=selectMyOrdersByPage&pageNumber=1">我的订单</a>
-                </li>
-                <li><a href="${pageContext.request.contextPath}/user?method=logout">登出</a></li>
-            </c:if>
-            <li><a href="${pageContext.request.contextPath}/jsp/cart.jsp">我的购物车</a></li>
-        </ol>
-    </div>
-</div>--%>
 
 <%--导航栏--%>
 <div class="container-fluid">
@@ -106,7 +81,7 @@
                         <li>
                             <a href="${pageContext.request.contextPath}/order?method=selectMyOrdersByPage&pageNumber=1">我的订单</a>
                         </li>
-                        <li><a href="${pageContext.request.contextPath}/user?method=logout"> 登 出 </a></li>
+                        <li><a href="${pageContext.request.contextPath}/user?method=logout"> 登出 </a></li>
                     </c:if>
                     <li><a href="${pageContext.request.contextPath}/jsp/cart.jsp"> 我的购物车 </a></li>
                 </ol>
