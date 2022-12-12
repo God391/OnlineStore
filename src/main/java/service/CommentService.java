@@ -12,4 +12,6 @@ public interface CommentService {
      * @param comment
      */
     void addComment(Comment comment) throws Exception;
+
+    String queryByPid(String pid);
 }

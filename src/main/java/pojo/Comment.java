@@ -15,6 +15,8 @@ public class Comment {
      */
     private String userId;
 
+    private String userName;
+
     /**
      * 评论内容
      */
@@ -28,12 +30,12 @@ public class Comment {
     /**
      * 创建时间
      */
-    private Long createTime;
+    private String createTime;
 
     /**
      * 更新时间
      */
-    private Long updateTime;
+    private String updateTime;
 
     /**
      * 星级
@@ -48,15 +50,24 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(String commentId, String userId, String content, String pid, Long createTime, Long updateTime, Integer rating, Integer state) {
+    public Comment(String commentId, String userId, String userName, String content, String pid, String createTime, String updateTime, Integer rating, Integer state) {
         this.commentId = commentId;
         this.userId = userId;
+        this.userName = userName;
         this.content = content;
         this.pid = pid;
         this.createTime = createTime;
         this.updateTime = updateTime;
         this.rating = rating;
         this.state = state;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     @Override
@@ -104,19 +115,19 @@ public class Comment {
         this.pid = pid;
     }
 
-    public Long getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Long createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
-    public Long getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Long updateTime) {
+    public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
 

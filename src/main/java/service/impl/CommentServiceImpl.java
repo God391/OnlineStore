@@ -1,5 +1,6 @@
 package service.impl;
 
+import com.alibaba.fastjson.JSON;
 import mapper.CategoryMapper;
 import mapper.CommentMapper;
 import org.apache.ibatis.session.SqlSession;
@@ -8,6 +9,8 @@ import pojo.Category;
 import pojo.Comment;
 import service.CommentService;
 import utils.SqlSessionFactoryUtils;
+
+import java.util.List;
 
 /**
  * @author f5gua
@@ -29,5 +32,24 @@ public class CommentServiceImpl implements CommentService {
         mapper.addComment(comment);
         session.commit();
         session.close();
+    }
+
+    /**
+     * @return
+     */
+    @Override
+    public String queryByPid(String pid) {
+
+        //1.调用mapper查询所有分类
+        SqlSession session = sqlSessionFactory.openSession();
+        CommentMapper mapper = session.getMapper(CommentMapper.class);
+        List<Comment> comments = mapper.queryByPid(pid);
+        session.close();
+        //2.将list转换成json字符串
+        if (comments != null && comments.size() > 0) {
+            return JSON.toJSONString(comments);
+        }
+        return null;
+
     }
 }

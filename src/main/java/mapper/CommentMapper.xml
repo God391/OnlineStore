@@ -6,7 +6,15 @@
 
 
     <insert id="addComment">
-        insert into comment(comment_id, user_id, content, pid, createtime, updatetime, rating, state)
-        values (#{commentId}, #{userId}, #{content}, #{pid}, #{createTime}, #{updateTime}, #{rating}, #{state})
+        insert into comment(comment_id, user_id, content, pid, createtime, updatetime, rating, state, username)
+        values (#{commentId}, #{userId}, #{content}, #{pid}, #{createTime}, #{updateTime}, #{rating},
+                #{state}, #{userName})
     </insert>
+
+    <select id="queryByPid" resultType="pojo.Comment">
+        select *
+        from comment
+        where pid = #{pid};
+    </select>
+
 </mapper>

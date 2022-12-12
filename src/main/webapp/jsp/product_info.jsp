@@ -125,15 +125,24 @@
 
             <div style="background-color:#d3d3d3;width:900px;">
                 <table class="table table-bordered">
-                    <tbody>
+                    <tbody id="comment">
                     <tr class="active">
                         <th><strong>商品评论</strong></th>
                     </tr>
-                    <tr class="warning">
-                        <th>暂无商品评论信息
-                            <a href="${pageContext.request.contextPath}/comment?method=addCommentUi&pid=${product.pid}">[发表商品评论]</a>
-                        </th>
-                    </tr>
+                    <c:if test="${length==0}">
+                        <tr class="warning">
+                            <th>暂无商品评论信息
+                                <a href="${pageContext.request.contextPath}/comment?method=addCommentUi&pid=${product.pid}">[发表商品评论]</a>
+                            </th>
+                        </tr>
+                    </c:if>
+                    <c:if test="${length!=0}">
+                        <tr class="warning">
+                            <th>
+                                <a href="${pageContext.request.contextPath}/comment?method=addCommentUi&pid=${product.pid}">[发表商品评论]</a>
+                            </th>
+                        </tr>
+                    </c:if>
                     </tbody>
                 </table>
             </div>
@@ -164,6 +173,27 @@
         document.getElementById("cartForm").submit();
     }
 </script>
+
+<script src="${pageContext.request.contextPath}/js/axios-0.18.0.js"></script>
+<script type="text/javascript">
+    //发送 ajax 根据 pid 查询所有评论
+    axios({
+        method: "post",
+        url: "${pageContext.request.contextPath}/comment?method=queryByPid&pid=${product.pid}",
+        data: "method=queryByPid"
+    }).then(function (response) {
+        //遍历json列表，获取每一个分类，包装成li标签，插入到ul内部
+        let comments = response.data;
+        for (let i = 0; i < comments.length; i++) {
+            let comment = comments[i];
+            let content = comment.content;
+            let userName = comment.userName;
+            let time = comment.updateTime;
+            $("#comment").append("<tr><td>" + userName + "&nbsp;&nbsp;&nbsp;&nbsp;" + time + "</td></tr>" + "<tr><td>" + content + "</td></tr>");
+        }
+    });
+</script>
+
 </body>
 
 </html>

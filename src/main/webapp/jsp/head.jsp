@@ -77,7 +77,7 @@
                         <li><a href="${pageContext.request.contextPath}/user?method=registerUi"> 注 册 </a></li>
                     </c:if>
                     <c:if test="${not empty user}">
-                        <li>${user.username}：你 好！</li>
+                        <li>${user.username}: 你 好！</li>
                         <li>
                             <a href="${pageContext.request.contextPath}/order?method=selectMyOrdersByPage&pageNumber=1">我的订单</a>
                         </li>
