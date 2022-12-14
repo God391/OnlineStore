@@ -89,10 +89,6 @@
 				</div>
 			</div>
 
-            <div class="container-fluid">
-				<img src="${pageContext.request.contextPath}/products/hao/ad.jpg" width="100%"/>
-			</div>
-
 			<div class="container-fluid">
 				<div class="col-md-12">
 					<h2>最新商品&nbsp;&nbsp;<img src="${pageContext.request.contextPath}/img/title2.jpg"/></h2>
