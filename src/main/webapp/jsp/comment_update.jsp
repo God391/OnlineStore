@@ -40,8 +40,8 @@
     </div>
 
     <div style="margin-top:10px;width:930px;">
-        <form method="post" action="${pageContext.request.contextPath}/comment?method=addComment&pid=${pid}">
-            <input type="hidden" name="method" value="addComment">
+        <form method="post" action="${pageContext.request.contextPath}/comment?method=updateComment&pid=${comment.pid}&commentId=${comment.comment_id}">
+            <input type="hidden" name="method" value="updateComment">
             <table class="table table-bordered" style="width: 930px">
                 <tbody>
                 <tr class="active">
@@ -50,15 +50,15 @@
                 <tr>
                     <td>
                         <div class="star_evaluate">
-                            <input type="radio" id="scoreId_1" class="score score_1" name="score" value="1"/>
+                            <input type="radio" id="scoreId_1" class="score score_1" name="score" value="1" checked=""/>
                             <label for="scoreId_1" class="star star_1"></label>
-                            <input type="radio" id="scoreId_2" class="score score_2" name="score" value="2"/>
+                            <input type="radio" id="scoreId_2" class="score score_2" name="score" value="2" checked=""/>
                             <label for="scoreId_2" class="star star_2"></label>
-                            <input type="radio" id="scoreId_3" class="score score_3" name="score" value="3"/>
+                            <input type="radio" id="scoreId_3" class="score score_3" name="score" value="3" checked=""/>
                             <label for="scoreId_3" class="star star_3"></label>
-                            <input type="radio" id="scoreId_4" class="score score_4" name="score" value="4"/>
+                            <input type="radio" id="scoreId_4" class="score score_4" name="score" value="4" checked=""/>
                             <label for="scoreId_4" class="star star_4"></label>
-                            <input type="radio" id="scoreId_5" class="score score_5" name="score" value="5"/>
+                            <input type="radio" id="scoreId_5" class="score score_5" name="score" value="5" checked=""/>
                             <label for="scoreId_5" class="star star_5"></label>
                         </div>
                     </td>
@@ -71,17 +71,20 @@
                 </tr>
                 <tr>
                     <td>
-                    <textarea id='memo' style="min-height:200px;min-width:910px;max-height:200px;max-width:910px;"
-                              name="memo">
-                    </textarea>
+                        <textarea id='memo' style="min-height:200px;min-width:910px;max-height:200px;max-width:910px;"
+                                  name="memo">${comment.content}</textarea>
                     </td>
                 </tr>
                 </tbody>
             </table>
-            <input type="submit" width="100" value="发表" name="submit">
+            <input type="submit" width="100" value="修改" name="submit">
         </form>
     </div>
 
 </div>
+
+<script>
+    document.getElementById("scoreId_" + ${comment.rating}).checked = "checked";
+</script>
 </body>
 </html>

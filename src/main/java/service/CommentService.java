@@ -14,4 +14,10 @@ public interface CommentService {
     void addComment(Comment comment) throws Exception;
 
     String queryByPid(String pid);
+
+    Comment queryBycommentId(String commentId);
+
+    void deleteBycommentId(String commentId);
+
+    void updateComment(Comment comment);
 }

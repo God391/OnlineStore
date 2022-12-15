@@ -15,6 +15,7 @@
     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>
     <!-- 引入自定义css文件 style.css -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/rating.css" type="text/css"/>
 
     <style>
         body {
@@ -132,14 +133,14 @@
                     <c:if test="${length==0}">
                         <tr class="warning">
                             <th>暂无商品评论信息
-                                <a href="${pageContext.request.contextPath}/comment?method=addCommentUi&pid=${product.pid}">[发表商品评论]</a>
+                                <a href="${pageContext.request.contextPath}/addCommentUiServlet?method=addCommentUi&pid=${product.pid}">[发表商品评论]</a>
                             </th>
                         </tr>
                     </c:if>
                     <c:if test="${length!=0}">
                         <tr class="warning">
                             <th>
-                                <a href="${pageContext.request.contextPath}/comment?method=addCommentUi&pid=${product.pid}">[发表商品评论]</a>
+                                <a href="${pageContext.request.contextPath}/addCommentUiServlet?method=addCommentUi&pid=${product.pid}">[发表商品评论]</a>
                             </th>
                         </tr>
                     </c:if>
@@ -182,14 +183,17 @@
         url: "${pageContext.request.contextPath}/comment?method=queryByPid&pid=${product.pid}",
         data: "method=queryByPid"
     }).then(function (response) {
+        console.log(response)
         //遍历json列表，获取每一个分类，包装成li标签，插入到ul内部
         let comments = response.data;
         for (let i = 0; i < comments.length; i++) {
             let comment = comments[i];
             let content = comment.content;
-            let userName = comment.userName;
-            let time = comment.updateTime;
-            $("#comment").append("<tr><td>" + userName + "&nbsp;&nbsp;&nbsp;&nbsp;" + time + "</td></tr>" + "<tr><td>" + content + "</td></tr>");
+            let userName = comment.username;
+            let time = comment.updatetime;
+            let id = comment.comment_id;
+            let rating = comment.rating;
+            $("#comment").append("<tr><td>用户名：" + userName + "&nbsp;&nbsp;&nbsp;&nbsp;更新时间：" + time + "&nbsp;&nbsp;&nbsp;&nbsp;评星：" + "<div class=\"star_evaluate\"><input type=\"radio\" id=\"scoreId_" + i + "\" class=\"score score_" + rating + "\" name=\"score_" + i + "\" value=\""+ rating + "\" checked=\"checked\" onclick=\"javascript:return false;\"/><label for=\"scoreId_" + i + "\" class=\"star star_"+ rating + "\"></label></div>" + "<a href='${pageContext.request.contextPath}/addCommentUiServlet?method=deleteComment&pid=${product.pid}&commentId=" + comment.comment_id + "'>【删除】</a>" + "<a href='${pageContext.request.contextPath}/addCommentUiServlet?method=updateComment&pid=${product.pid}&commentId=" + comment.comment_id + "'>【修改】</a>" + "</td></tr>" + "<tr><td>评论：" + content + "</td></tr>");
         }
     });
 </script>

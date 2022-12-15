@@ -8,14 +8,14 @@ public class Comment {
     /**
      * 评论ID
      */
-    private String commentId;
+    private String comment_id;
 
     /**
      * 评论者ID
      */
-    private String userId;
+    private String user_id;
 
-    private String userName;
+    private String username;
 
     /**
      * 评论内容
@@ -30,12 +30,12 @@ public class Comment {
     /**
      * 创建时间
      */
-    private String createTime;
+    private String createtime;
 
     /**
      * 更新时间
      */
-    private String updateTime;
+    private String updatetime;
 
     /**
      * 星级
@@ -50,53 +50,45 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(String commentId, String userId, String userName, String content, String pid, String createTime, String updateTime, Integer rating, Integer state) {
-        this.commentId = commentId;
-        this.userId = userId;
-        this.userName = userName;
+    public Comment(String comment_id, String user_id, String username, String content, String pid, String createtime, String updatetime, Integer rating, Integer state) {
+        this.comment_id = comment_id;
+        this.user_id = user_id;
+        this.username = username;
         this.content = content;
         this.pid = pid;
-        this.createTime = createTime;
-        this.updateTime = updateTime;
+        this.createtime = createtime;
+        this.updatetime = updatetime;
         this.rating = rating;
         this.state = state;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     @Override
     public String toString() {
-        return "Comment{" + "commentId='" + commentId + '\'' + ", userId='" + userId + '\'' + ", content='" + content + '\'' + ", pid='" + pid + '\'' + ", createTime='" + createTime + '\'' + ", updateTime='" + updateTime + '\'' + ", rating=" + rating + ", state=" + state + '}';
+        return "Comment{" + "comment_id='" + comment_id + '\'' + ", user_id='" + user_id + '\'' + ", username='" + username + '\'' + ", content='" + content + '\'' + ", pid='" + pid + '\'' + ", createtime='" + createtime + '\'' + ", updatetime='" + updatetime + '\'' + ", rating=" + rating + ", state=" + state + '}';
     }
 
-    public Integer getRating() {
-        return rating;
+    public String getComment_id() {
+        return comment_id;
     }
 
-    public void setRating(Integer rating) {
-        this.rating = rating;
+    public void setComment_id(String comment_id) {
+        this.comment_id = comment_id;
     }
 
-    public String getCommentId() {
-        return commentId;
+    public String getUser_id() {
+        return user_id;
     }
 
-    public void setCommentId(String commentId) {
-        this.commentId = commentId;
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getContent() {
@@ -115,20 +107,28 @@ public class Comment {
         this.pid = pid;
     }
 
-    public String getCreateTime() {
-        return createTime;
+    public String getCreatetime() {
+        return createtime;
     }
 
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
+    public void setCreatetime(String createtime) {
+        this.createtime = createtime;
     }
 
-    public String getUpdateTime() {
-        return updateTime;
+    public String getUpdatetime() {
+        return updatetime;
     }
 
-    public void setUpdateTime(String updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdatetime(String updatetime) {
+        this.updatetime = updatetime;
+    }
+
+    public Integer getRating() {
+        return rating;
+    }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
     }
 
     public Integer getState() {
@@ -138,6 +138,4 @@ public class Comment {
     public void setState(Integer state) {
         this.state = state;
     }
-
-
 }
