@@ -2,6 +2,7 @@ package service;
 
 import pojo.Order;
 import pojo.OrderItem;
+import pojo.OrderItemNoOrder;
 import pojo.PageBean;
 
 import java.util.List;
@@ -16,4 +17,6 @@ public interface OrderService {
     Order getById(String oid);
 
     void updateState(Order order);
+
+    List<OrderItemNoOrder> getByOid(String oid);
 }

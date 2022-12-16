@@ -3,6 +3,7 @@ package mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import pojo.OrderItem;
+import pojo.OrderItemNoOrder;
 
 import java.util.List;
 
@@ -21,5 +22,8 @@ public interface OrderItemMapper {
      * @return 订单项集合
      */
     List<OrderItem> selectByOid(String oid);
+
+    List<OrderItemNoOrder> selectByOId(String oid);
+
 
 }

@@ -14,5 +14,10 @@
         from orderitem
         where oid = #{oid}
     </select>
+    <select id="selectByOId" resultType="pojo.OrderItemNoOrder">
+        select *
+        from orderitem
+        where oid = #{oid}
+    </select>
 
 </mapper>

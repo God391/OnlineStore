@@ -16,21 +16,20 @@
 			function showDetail(oid){
 
 				// 发送 ajax 请求
-				$.ajax("${pageContext.request.contextPath}/adminOrder",{"method":"showDetail","oid":oid},function(d){
-					//alert(d);
+				$.post("${pageContext.request.contextPath}/adminOrder",{"method":"showDetail","oid":oid},function(d){
 					var s = "<table border='1' width='99%'>";
-					s+="<tr><th>商品名称</th><th><购买数量/th></tr>"
-					$d.each(function () {
-						s+="<tr><td>" + this.product.pname + "</td><td> + this.count + </td></tr>";
+					s+="<tr><th>商品名称</th><th>购买数量</th></tr>"
+					$(d).each(function () {
+						s+="<tr><td>" + this.product.pname + "</td><td>" + this.count + "</td></tr>";
 					})
 					s+="</table>";
 					layer.open({
-						type: 1,
-						title:"订单号" + oid,
-						area: ['520px', '300px'],
-						shadeClose: true,
-						content: s
-					})
+						type: 1, // 0: 信息框 1: 页面 2: iframe层 3: 加载层 4: tip层
+						title:"订单号" + oid, // 标题
+						area: ['520px', '300px'], // 大小
+						shadeClose: true, // 点击弹窗外区域遮罩关闭
+						content: s // 内容
+					});
 				},"json");
 				
 			}

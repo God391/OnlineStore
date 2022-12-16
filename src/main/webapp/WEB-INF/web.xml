@@ -22,6 +22,7 @@
         <filter-name>PrivilegeFilter</filter-name>
         <url-pattern>/order/*</url-pattern>
         <url-pattern>/cart/*</url-pattern>
+        <url-pattern>/admin/*</url-pattern>
         <url-pattern>/addCommentUiServlet</url-pattern>
     </filter-mapping>
 

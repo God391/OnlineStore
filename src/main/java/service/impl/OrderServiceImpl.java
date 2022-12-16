@@ -7,10 +7,7 @@ import mapper.OrderMapper;
 import mapper.ProductMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
-import pojo.Order;
-import pojo.OrderItem;
-import pojo.PageBean;
-import pojo.Product;
+import pojo.*;
 import service.OrderService;
 import service.ProductService;
 import utils.SqlSessionFactoryUtils;
@@ -126,17 +123,7 @@ public class OrderServiceImpl implements OrderService {
         // 1.获取 mapper
         SqlSession session = factory.openSession();
         OrderMapper om = session.getMapper(OrderMapper.class);
-        OrderItemMapper oim = session.getMapper(OrderItemMapper.class);
-        ProductMapper pm = session.getMapper(ProductMapper.class);
         Order order = om.getByOid(oid);
-        List<OrderItem> items = oim.selectByOid(oid);
-        for (OrderItem item : items) {
-            String pid = item.getPid();
-            //item.setOrder(order);
-            Product product = pm.selectById(pid);
-            item.setProduct(product);
-        }
-        order.setItems(items);
 
         session.close();
 
@@ -154,6 +141,26 @@ public class OrderServiceImpl implements OrderService {
         om.updateState(order);
         session.commit();
         session.close();
+    }
+
+    /**
+     * @param oid
+     * @return
+     */
+    @Override
+    public List<OrderItemNoOrder> getByOid(String oid) {
+        // 1.获取 mapper
+        SqlSession session = factory.openSession();
+        OrderItemMapper oim = session.getMapper(OrderItemMapper.class);
+        ProductMapper pm = session.getMapper(ProductMapper.class);
+        List<OrderItemNoOrder> items = oim.selectByOId(oid);
+        for (OrderItemNoOrder item : items) {
+            String pid = item.getPid();
+            //item.setOrder(null);
+            Product product = pm.selectById(pid);
+            item.setProduct(product);
+        }
+        return items;
     }
 
 }
