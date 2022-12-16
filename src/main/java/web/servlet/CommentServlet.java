@@ -95,8 +95,6 @@ public class CommentServlet extends BaseServlet {
         comment.setCreatetime(date);
         comment.setUpdatetime(date);
 
-        System.out.println(comment);
-
         // 3. 调用service保存
         CommentService cs = new CommentServiceImpl();
         cs.updateComment(comment);
@@ -112,7 +110,6 @@ public class CommentServlet extends BaseServlet {
 
         // 1. 设置响应编码
         response.setContentType("text/json;charset=utf-8");
-
 
         // 2. 调用 service，查询所有分类，返回值 json 字符串
         CommentService cs = new CommentServiceImpl();

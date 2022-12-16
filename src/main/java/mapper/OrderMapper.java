@@ -45,4 +45,15 @@ public interface OrderMapper {
      */
     List<Order> getOrderByStep(@Param("startIndex") int startIndex, @Param("pageSize") int pageSize, @Param("uid") String uid);
 
+    List<Order> queryAllByState(@Param("start") int start, @Param("pageSize") int pageSize, @Param("state") String state);
+
+    List<Order> queryAll(@Param("start") int start, @Param("pageSize") int pageSize);
+
+    Order getByOid(String oid);
+
+    int selectTotalRecord();
+
+    int selectTotalRecordByState(String state);
+
+    void updateState(Order order);
 }

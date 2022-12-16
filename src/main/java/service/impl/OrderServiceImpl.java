@@ -1,5 +1,7 @@
 package service.impl;
 
+import com.alibaba.fastjson.JSON;
+import constant.Contant;
 import mapper.OrderItemMapper;
 import mapper.OrderMapper;
 import mapper.ProductMapper;
@@ -10,6 +12,7 @@ import pojo.OrderItem;
 import pojo.PageBean;
 import pojo.Product;
 import service.OrderService;
+import service.ProductService;
 import utils.SqlSessionFactoryUtils;
 
 import java.util.List;
@@ -19,6 +22,7 @@ public class OrderServiceImpl implements OrderService {
 
     /**
      * 保存订单
+     *
      * @param order
      */
     @Override
@@ -37,7 +41,7 @@ public class OrderServiceImpl implements OrderService {
             }
             //5.提交事务
             session.commit();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("订单添加失败！！！");
             //5.1回滚事务
@@ -47,6 +51,7 @@ public class OrderServiceImpl implements OrderService {
 
     /**
      * 我的订单
+     *
      * @param pageNumber
      * @param pageSize
      * @param uid
@@ -74,4 +79,81 @@ public class OrderServiceImpl implements OrderService {
         orderPageBean.setData(orders);
         return orderPageBean;
     }
+
+    /**
+     * 后台查询订单列表
+     *
+     * @param state
+     * @return
+     */
+    @Override
+    public PageBean<Order> queryAllByState(int pageNumber, int pageSize, String state) {
+        //1.创建pageBean
+        PageBean<Order> pb = new PageBean<Order>(pageNumber, pageSize);
+        //2.设置当前页数据
+        SqlSession session = factory.openSession();
+        //查询当前页的订单
+        OrderMapper mapper = session.getMapper(OrderMapper.class);
+        //判断 state
+        List<Order> orders;
+        if (null == state || state.trim().length() == 0) {
+            orders = mapper.queryAll(pb.getStartIndex(), pageSize);
+            pb.setData(orders);
+            //3.设置总记录数
+            int totalRecord = mapper.selectTotalRecord();
+            session.close();
+            pb.setTotalRecord(totalRecord);
+
+        } else {
+            orders = mapper.queryAllByState(pb.getStartIndex(), pageSize, state);
+            pb.setData(orders);
+            //3.设置总记录数
+            int totalRecord = mapper.selectTotalRecordByState(state);
+            session.close();
+            pb.setTotalRecord(totalRecord);
+        }
+        pb.setTotalPage();
+        return pb;
+
+    }
+
+
+    /**
+     * 订单详情
+     */
+    @Override
+    public Order getById(String oid) {
+        // 1.获取 mapper
+        SqlSession session = factory.openSession();
+        OrderMapper om = session.getMapper(OrderMapper.class);
+        OrderItemMapper oim = session.getMapper(OrderItemMapper.class);
+        ProductMapper pm = session.getMapper(ProductMapper.class);
+        Order order = om.getByOid(oid);
+        List<OrderItem> items = oim.selectByOid(oid);
+        for (OrderItem item : items) {
+            String pid = item.getPid();
+            //item.setOrder(order);
+            Product product = pm.selectById(pid);
+            item.setProduct(product);
+        }
+        order.setItems(items);
+
+        session.close();
+
+        return order;
+    }
+
+    /**
+     * @param order
+     */
+    @Override
+    public void updateState(Order order) {
+        // 1.获取 mapper
+        SqlSession session = factory.openSession();
+        OrderMapper om = session.getMapper(OrderMapper.class);
+        om.updateState(order);
+        session.commit();
+        session.close();
+    }
+
 }

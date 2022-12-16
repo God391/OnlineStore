@@ -8,6 +8,11 @@
         insert into orders
         values (#{oid}, #{ordertime}, #{total}, #{state}, #{address}, #{name}, #{telephone}, #{uid})
     </insert>
+    <update id="updateState">
+        update orders
+        set state = #{state}
+        where oid = #{oid}
+    </update>
 
     <select id="getTotalRecord" resultType="java.lang.Integer">
         select count(*)
@@ -42,6 +47,34 @@
         where uid = #{uid}
         order by ordertime desc
         limit #{startIndex}, #{pageSize}
+    </select>
+
+    <select id="queryAllByState" resultType="pojo.Order">
+        select *
+        from orders
+        where state = #{state}
+        order by ordertime desc
+        limit ${start}, ${pageSize}
+    </select>
+    <select id="queryAll" resultType="pojo.Order">
+        select *
+        from orders
+        order by ordertime desc
+        limit ${start}, ${pageSize}
+    </select>
+    <select id="getByOid" resultType="pojo.Order">
+        select *
+        from orders
+        where oid = #{oid}
+    </select>
+    <select id="selectTotalRecord" resultType="java.lang.Integer">
+        select count(*)
+        from orders
+    </select>
+    <select id="selectTotalRecordByState" resultType="java.lang.Integer">
+        select count(*)
+        from orders
+        where state = #{state}
     </select>
 
 </mapper>

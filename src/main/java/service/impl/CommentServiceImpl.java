@@ -44,8 +44,7 @@ public class CommentServiceImpl implements CommentService {
         List<Comment> comments = mapper.queryByPid(pid);
         session.close();
 
-
-        //2.将list转换成json字符串
+        //2.将 comments 转换成json字符串
         if (comments != null && comments.size() > 0) {
             return JSON.toJSONString(comments);
         }
